@@ -6,44 +6,38 @@ import (
 )
 
 func fillCityAndRemove() {
-	var cm CityMap
-	nA := CityNode{"A"}
-	nB := CityNode{"B"}
-	nC := CityNode{"C"}
-	nD := CityNode{"D"}
-	nE := CityNode{"E"}
-	nF := CityNode{"F"}
-	cm.AddCity(&nA)
-	cm.AddCity(&nB)
-	cm.AddCity(&nC)
-	cm.AddCity(&nD)
-	cm.AddCity(&nE)
-	cm.AddCity(&nF)
+	var c cityMap
+	nA := cityNode{"A"}
+	nB := cityNode{"B"}
+	nC := cityNode{"C"}
+	nD := cityNode{"D"}
+	nE := cityNode{"E"}
+	nF := cityNode{"F"}
+	c.addCity(&nA)
+	c.addCity(&nB)
+	c.addCity(&nC)
+	c.addCity(&nD)
+	c.addCity(&nE)
+	c.addCity(&nF)
 
-	cm.AddConnection("A", "B", "west")
-	cm.AddConnection("A", "C", "south")
-	cm.AddConnection("B", "E", "west")
-	cm.AddConnection("A", "D", "north")
+	c.addConnection("A", "B", "west")
+	c.addConnection("A", "C", "south")
+	c.addConnection("B", "E", "west")
+	c.addConnection("A", "D", "north")
 	fmt.Println("===Map After Connections Added===")
-	cm.PrintMap()
+	c.PrintMap()
 
-	cm.RemoveCity("A")
-	// cm.RemoveCity("B")
-	// cm.RemoveCity("C")
-	// cm.RemoveCity("D")
+	c.RemoveCity("A")
 	fmt.Println("===Map After City \"A\" Removed===")
-	cm.PrintMap()
+	c.PrintMap()
 
 }
 
 func TestAdd(t *testing.T) {
 	// fillCityAndRemove()
-	var cm CityMap
-	cm.ReadCityMapFile("map.txt")
-	// fmt.Println("===Map From Map.txt Added===")
-	// cm.PrintMap()
-	cm.RunAlienSim(2)
+	var c cityMap
+	c.ReadCityMapFile("map.txt")
+	c.RunAlienSim(2)
 	fmt.Println("\n===Map after Alien Sim ===")
-	// cm.PrintMap()
 
 }
