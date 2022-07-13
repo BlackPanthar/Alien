@@ -3,11 +3,9 @@ package graph
 import (
 	"fmt"
 	"sync"
-
-	"github.com/cheekybits/genny/generic"
 )
 
-type Item generic.Type
+type Item interface{}
 
 type Node struct {
 	value Item
