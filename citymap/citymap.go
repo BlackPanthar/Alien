@@ -1,6 +1,4 @@
-package citymap
-
-//package main
+package main
 
 import (
 	"bufio"
@@ -12,8 +10,8 @@ import (
 	"strings"
 	"sync"
 	"time"
-	mapset "github.com/deckarep/golang-set/v2"
-	
+
+	mapset "github.com/deckarep/golang-set"
 )
 
 // CityNode is a node in CityMap
@@ -44,7 +42,7 @@ func (c *cityMap) addCity(cn *cityNode) {
 	}
 	name := cn.name
 	c.cities[name] = cn
-	// if not yet done, Instantiate the map 
+	// if not yet done, Instantiate the map
 	if c.connections == nil {
 		c.connections = make(map[cityNode]map[string]*cityNode)
 	}
@@ -53,7 +51,6 @@ func (c *cityMap) addCity(cn *cityNode) {
 
 	c.lock.Unlock()
 }
-
 
 func (c *cityMap) addConnection(cityname1 string, cityname2 string, direction string) {
 	// Let's assume we're not really worried about deadlock from an invalid input causing some portion to fail
@@ -77,8 +74,7 @@ func (c *cityMap) addConnection(cityname1 string, cityname2 string, direction st
 		c.connections[*c2]["west"] = c1
 	}
 	c.lock.Unlock()
-	
-	
+
 }
 
 // RemoveCity removes the City and its connections (both ways) in the CityMap
@@ -269,7 +265,6 @@ func (c *cityMap) RunAlienSim(numberOfAliens int) {
 		// fmt.Println(nodesToOccupants)
 	}
 
-	
 	for steps := 0; steps < 10000; steps++ {
 		// Look at all cities with alien occupants
 		for city, cityOccupants := range nodesToOccupants {
@@ -329,9 +324,9 @@ func main() {
 	num := os.Args[1]
 	file := os.Args[2]
 
-	numAliens, _ := strconv.Atoi(num)
+	numberOfAliens, _ := strconv.Atoi(num)
 
 	var c cityMap
 	c.ReadCityMapFile(file)
-	c.RunAlienSim(numAliens)
+	c.RunAlienSim(numberOfAliens)
 }
