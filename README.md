@@ -1,11 +1,11 @@
 # Alien
 
 
-# Alien Invasion - Challenge
+# Alien Invasion 
 
 ## Thought Process
 
-The immediate reaction when reading the spec was the idea of a graph, because that's what
+My immediate reaction when reading the spec was the idea of a graph, because that's what
 all city maps really are. We can have each node represent a city that aliens can visit.
 
 So started off with a very simple graph implementation in Go. Made sure it was thread-safe
