@@ -3,8 +3,7 @@
 
 # Alien Invasion 
 
-My immediate reaction when reading the spec was the idea of a graph, because that's what
-all city maps really are. We can have each node represent a city that aliens can visit.
+I immediately thought about using graphs. We can have each node represent a city that aliens can visit.
 
 So started off with a very simple graph implementation in Go. Made sure it was thread-safe
 by using locks
@@ -16,7 +15,7 @@ I used a map to keep track of the cities and connected cities. I used a mapping 
 
 ### Alien Invasion
 
-For the alien invasion, I kept it simple by adding functions inside of the CityMap.go file. For this, I assumed that more than two aliens can be in a city at once. I created a mapping that would take a CityNode and provide a list (slice) of alien occupants. From there I could keep track of which aliens were in which cities, manage those aliens every step.
+For the alien invasion, I kept it simple by adding functions inside of the cityMap.go file. For this, I assumed that more than two aliens can be in a city at once. I created a mapping that would take a cityNode and provide a list (slice) of alien occupants. From there I could keep track of which aliens were in which cities, manage those aliens every step.
 
 I would then assign aliens to random cities, and aliens were just integers in the list of occupants, so it was easy to manage.
 
