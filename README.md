@@ -37,10 +37,9 @@ Command line program in citymap directory:
 
 ```
 
-➜  citymap git:(main) ✗ go run citymap.go 5 map.txt
-Bar has been destroyed by alien 3, and alien 1!
-Baz has been destroyed by alien 2, alien 4, and alien 5!
-
+➜  citymap git:(main) ✗ go run citymap.go 6 map.txt
+Bee} has been destroyed by alien 5, alien 1, and alien 4!
+Foo has been destroyed by alien 3, alien 2, and alien 6!
 
 
 ➜  citymap git:(main) ✗ go test
