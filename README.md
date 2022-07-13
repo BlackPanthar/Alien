@@ -3,8 +3,6 @@
 
 # Alien Invasion 
 
-## Thought Process
-
 My immediate reaction when reading the spec was the idea of a graph, because that's what
 all city maps really are. We can have each node represent a city that aliens can visit.
 
