@@ -40,7 +40,7 @@ Command line program in citymap directory:
 ➜  citymap git:(main) ✗ go run citymap.go 5 map.txt
 Bar has been destroyed by alien 3, and alien 1!
 Baz has been destroyed by alien 2, alien 4, and alien 5!
-Foo has been destroyed by alien 5, and alien 4!
+
 
 
 ➜  citymap git:(main) ✗ go test
